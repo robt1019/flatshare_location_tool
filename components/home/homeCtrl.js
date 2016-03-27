@@ -1,4 +1,6 @@
-angular.module('flt.home').controller('homeCtrl', ['', function(){  
-    var vm = this;
-    vm.hello = "hello";
-}]);
+angular.module('flt.home').controller('homeCtrl', ['$scope',
+    function($scope) {
+        $scope.hello = "hello";
+        console.log('hello');
+    }
+]);
