@@ -6,17 +6,23 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body ng-app="flt">
-        <h1>test</h1>
-        <flt-home></flt-home>
+        <flt-nav></flt-nav>
+        <ng-view></ng-view>
     </body>
 </html>
+
 <!-- scripts -->
 <!-- bower_components -->
 <script src="/bower_components/angular/angular.js"></script>
+<script src="/bower_components/angular-route/angular-route.js"></script>
 
 <!-- app -->
 <script type="text/javascript" src="app.js"></script>
+<!-- routes -->
+<script type="text/javascript" src="routes.js"></script>
 <!-- components -->
 <!-- home -->
-<script type="text/javascript" src="components/home/homeCtrl.js"></script>
+<script type="text/javascript" src="components/home/HomeCtrl.js"></script>
 <script type="text/javascript" src="components/home/homeDirective.js"></script>
+<!-- nav -->
+<script type="text/javascript" src="components/nav/navDirective.js"></script>
