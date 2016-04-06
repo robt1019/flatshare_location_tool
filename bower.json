@@ -1,0 +1,23 @@
+{
+  "name": "flatshare_location_tool",
+  "homepage": "https://github.com/robt1019/flatshare_location_tool",
+  "authors": [
+    "rob <robert.i.taylor88@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.3",
+    "angular-route": "^1.5.3"
+  }
+}
