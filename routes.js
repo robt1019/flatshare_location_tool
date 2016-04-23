@@ -1,4 +1,4 @@
-angular.module('flt', ['ngRoute', 'flt.home'])
+angular.module('flt', ['ngRoute'])
     .config(function($routeProvider) {
         $routeProvider
             .when('/', {
@@ -6,10 +6,10 @@ angular.module('flt', ['ngRoute', 'flt.home'])
                 controller: 'LocationToolCtrl',
                 controllerAs: 'ctrl'
             })
-        .when('/about', {
-            templateUrl: 'components/about/aboutView.html',
-        })
-        .when('/contact', {
-            templateUrl: '/components/contact/contactView.html'
-        });
+            .when('/about', {
+                templateUrl: 'components/about/aboutView.html',
+            })
+            .when('/contact', {
+                templateUrl: '/components/contact/contactView.html'
+            });
     });

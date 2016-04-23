@@ -10,15 +10,17 @@
 
             beforeEach(inject(function(_$controller_) {
                 $controller = _$controller_;
+
+                mockLocationToolService = {
+                    getResults: function() {}
+                };
+
+                LocationToolCtrl = $controller('LocationToolCtrl', {
+                    LocationToolService: mockLocationToolService
+                });
+
             }));
 
-            mockLocationToolService = {
-                getResults: function() {}
-            };
-
-            LocationToolCtrl = $controller('LocationToolCtrl', {
-                LocationToolService: mockLocationToolService
-            });
 
             describe('getResults', function() {
                 it('should call LocationToolService.getResults with relevant argument', function() {
@@ -28,8 +30,7 @@
                     };
                     spyOn(mockLocationToolService, 'getResults');
                     LocationToolCtrl.getResults(testHousemates);
-                    expect(mockLocationToolService.setHousemates()).
-                    toHaveBeenCalledWith(testHousemates);
+                    expect(mockLocationToolService.getResults).toHaveBeenCalledWith(testHousemates);
                 });
             });
         });

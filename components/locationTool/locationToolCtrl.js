@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('flt').controller('LocationToolCtrl', 'LocationToolService', [
+    angular.module('flt').controller('LocationToolCtrl', ['LocationToolService',
         function(LocationToolService) {
 
             this.housemates = {
