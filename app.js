@@ -1,5 +1,5 @@
 // main module
-angular.module('flt', ['flt.nav', 'ngRoute']);
-
-// other modules
-angular.module('flt.nav', []);
+angular.module('flt', [
+    'ngRoute',
+    'leaflet-directive'
+]);

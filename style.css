@@ -1,4 +1,16 @@
-#flt-nav, ul, li {
-  list-style: none;
-  display: inline-block;
+#flt-nav,
+ul,
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+#map {
+    height: 450px;
+    width: 450px;
+}
+
+#map2 {
+    height: 450px;
+    width: 450px;
 }

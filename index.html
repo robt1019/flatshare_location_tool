@@ -2,28 +2,30 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <title>flatshare location tool</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/leaflet/dist/leaflet.css">
 </head>
 
 <body ng-app="flt">
-    <flt-nav></flt-nav>
     <ng-view></ng-view>
 </body>
 
 </html>
 <!-- scripts -->
 <!-- bower_components -->
-<script src="/bower_components/angular/angular.js"></script>
-<script src="/bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/lodash/lodash.js"></script>
+<script src="bower_components/restangular/src/restangular.js"></script>
+<script src="bower_components/leaflet/dist/leaflet.js"></script>
+<script src="bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js"></script>
 <!-- app -->
-<script type="text/javascript" src="app.js"></script>
+<script src="app.js"></script>
 <!-- routes -->
-<script type="text/javascript" src="routes.js"></script>
+<script src="routes.js"></script>
 <!-- components -->
 <!-- locationTool -->
-<script type="text/javascript" src="components/locationTool/locationToolCtrl.js"></script>
-<script type="text/javascript" src="components/locationTool/locationToolService.js"></script>
-<!-- nav -->
-<script type="text/javascript" src="components/nav/navDirective.js"></script>
+<script src="components/locationTool/locationToolCtrl.js"></script>
+<script src="components/locationTool/locationToolService.js"></script>

@@ -1,9 +1,9 @@
 angular.module('flt').service('LocationToolService', [function() {
 
-    this.getResults = function(housemates) {
-        window.alert('testREsults');
-        return "results";
+    this.housemates = {};
 
+    this.getResults = function(housemates) {
+        this.housemates = housemates;
     };
 
 }]);
