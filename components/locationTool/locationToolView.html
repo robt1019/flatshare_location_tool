@@ -1,10 +1,12 @@
-<form ng-submit="getResults()">
-    <p>Where do the housemates work/study? (5 max)</p>
-    <input ng-model="ctrl.housemates.housemate1.location" type="text" name="housemate1" placeholder="postcode 1">
-    <input ng-model="ctrl.housemates.housemate2.location" type="text" name="housemate2" placeholder="postcode 2">
-    <input ng-model="ctrl.housemates.housemate3.location" type="text" name="housemate3" placeholder="postcode 3">
-    <input ng-model="ctrl.housemates.housemate4.location" type="text" name="housemate4" placeholder="postcode 4">
-    <input ng-model="ctrl.housemates.housemate5.location" type="text" name="housemate5" placeholder="postcode 5">
+<form ng-submit="getResults(location.postcode)">
+    <h1>Convert postcodes to latitude longitude</h1>
+    <p>What postcode?</p>
+    <input ng-model="location.postcode" type="text" name="postcode" placeholder="postcode">
     <input type="submit" name="get-results" value="Get Results">
 </form>
-<leaflet id="map" center="london" event-broadcast="events" defaults="defaults"></leaflet>
+<div>
+    <h2>Results</h2>
+    <p>Longitude: {{location.longitude}}</p>
+    <p>Longitude: {{location.latitude}}</p>
+</div>
+<leaflet id="map" center="center" event-broadcast="events" defaults="defaults"></leaflet>

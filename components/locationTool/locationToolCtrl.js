@@ -4,12 +4,8 @@
     angular.module('flt').controller('LocationToolCtrl', ['$scope', 'LocationToolService',
         function($scope, LocationToolService) {
 
+            // modules
             angular.extend($scope, {
-                london: {
-                    lat: 51.51,
-                    lng: 0.13,
-                    zoom: 13
-                },
                 events: {},
                 layers: {
                     baselayers: {
@@ -22,20 +18,32 @@
                 },
 
                 defaults: {
-                    scrollWheelZoom: false
+                    scrollWheelZoom: true
                 },
-                housemates: {
-                    housemate1: {},
-                    housemate2: {},
-                    housemate3: {},
-                    housemate4: {},
-                    housemate5: {}
+                location: {
+                    postcode: '',
+                    lat: '',
+                    long: ''
+                },
+                center: {
+                    lat: '',
+                    lng: '',
+                    zoom: 15
                 }
             });
 
+            // methods
             angular.extend($scope, {
-                getResults: function(housemates) {
-                    LocationToolService.getResults(housemates);
+                getResults: function(postcode) {
+                    var promise = LocationToolService.getLatLong(postcode);
+                    promise.then(function(response) {
+                        $scope.center.lat = response.data.result.latitude;
+                        $scope.center.lng = response.data.result.longitude;
+                        $scope.location.latitude = response.data.result.latitude;
+                        $scope.location.longitude = response.data.result.longitude;
+                    }, function(error) {
+                        window.alert(error + ' error. Try again later');
+                    });
                 }
             });
         }
