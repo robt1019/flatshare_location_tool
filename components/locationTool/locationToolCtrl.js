@@ -26,9 +26,16 @@
                     long: ''
                 },
                 center: {
-                    lat: '',
-                    lng: '',
-                    zoom: 15
+                    lat: null,
+                    lng: null,
+                    zoom: ''
+                },
+                markers: {
+                    center: {
+                        lat: null,
+                        lng: null,
+                        focus: true
+                    }
                 }
             });
 
@@ -38,7 +45,10 @@
                     var promise = LocationToolService.getLatLong(postcode);
                     promise.then(function(response) {
                         $scope.center.lat = response.data.result.latitude;
+                        $scope.markers.center.lat = response.data.result.latitude;
+                        $scope.markers.center.lng = response.data.result.longitude;
                         $scope.center.lng = response.data.result.longitude;
+                        $scope.center.zoom = 16;
                         $scope.location.latitude = response.data.result.latitude;
                         $scope.location.longitude = response.data.result.longitude;
                     }, function(error) {
